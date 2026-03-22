@@ -10,7 +10,54 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
-  
+  <style>
+    /* Stats bar */
+    .stats-bar{background:var(--teal);background-image:linear-gradient(135deg,#0D8C72,#096B57);padding:2.5rem 2rem}
+    .stats-bar-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
+    .sbar-num{font-family:var(--font-display);font-size:2.4rem;font-weight:700;color:var(--white);line-height:1}
+    .sbar-lbl{font-size:.82rem;color:rgba(255,255,255,0.78);margin-top:5px;font-weight:500}
+    .sbar-divider{width:1px;background:rgba(255,255,255,0.2);margin:0 auto}
+    /* story */
+    .about-story{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+    .story-text h2{font-family:var(--font-display);font-size:clamp(1.7rem,2.8vw,2.35rem);font-weight:700;color:var(--navy);margin-bottom:1rem;line-height:1.22}
+    .story-text p{color:var(--slate-600);line-height:1.82;margin-bottom:1.2rem;font-size:.97rem}
+    .story-visual{background:var(--navy);background-image:linear-gradient(135deg,#0B1F3A,#1E3F6F);border-radius:var(--radius-lg);padding:2.75rem 2.5rem;position:relative;overflow:hidden}
+    .story-visual::before{content:'';position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(13,140,114,0.2) 0%,transparent 70%)}
+    .sv-big{font-family:var(--font-display);font-size:3.5rem;font-weight:700;color:var(--teal-light);line-height:1}
+    .sv-lbl{font-size:.88rem;color:rgba(255,255,255,0.65);margin-top:6px;margin-bottom:1.75rem}
+    .sv-pills{display:flex;flex-wrap:wrap;gap:.55rem}
+    .sv-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.78);font-size:.78rem;font-weight:500;padding:5px 12px;border-radius:5px}
+    /* values */
+    .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem}
+    .value-card{background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:1.75rem 1.5rem;box-shadow:var(--shadow-card);border-top:3px solid var(--teal)}
+    .value-card.gold-top{border-top-color:var(--gold)}
+    .value-icon{font-size:1.75rem;margin-bottom:.85rem}
+    .value-card h4{font-family:var(--font-display);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+    .value-card p{font-size:.85rem;color:var(--slate-600);line-height:1.65}
+    /* delivery model */
+    .delivery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+    .del-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:var(--radius-lg);padding:1.75rem 1.5rem}
+    .del-icon{width:44px;height:44px;border-radius:10px;background:rgba(13,140,114,0.15);border:1px solid rgba(13,140,114,0.25);display:flex;align-items:center;justify-content:center;font-size:1.15rem;margin-bottom:1rem}
+    .del-card h4{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.4rem}
+    .del-card p{font-size:.85rem;color:rgba(255,255,255,0.62);line-height:1.65}
+    /* certs */
+    .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem}
+    .cert-card{background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius);padding:1.4rem 1.3rem;box-shadow:var(--shadow-card)}
+    .cert-card h5{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+    .cert-card p{font-size:.82rem;color:var(--slate-600);line-height:1.58}
+    .cert-status{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 8px;border-radius:4px;margin-bottom:.6rem}
+    .status-progress{background:var(--gold-pale);color:var(--gold);border:1px solid rgba(184,134,11,0.3)}
+    .status-active{background:var(--teal-pale);color:var(--teal);border:1px solid rgba(13,140,114,0.3)}
+    /* responsive */
+    @media(max-width:960px){
+      .about-story{grid-template-columns:1fr}
+      .stats-bar-inner{grid-template-columns:1fr 1fr;gap:1.5rem}
+      .values-grid,.delivery-grid,.cert-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:600px){
+      .stats-bar-inner,.values-grid,.delivery-grid,.cert-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
 <nav class="site-nav">
@@ -35,9 +82,7 @@
       <li><a href="partners.html">Partners</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
-    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
@@ -49,78 +94,155 @@
   <a href="contact.html">Get in Touch</a>
 </div>
 
+<!-- HERO -->
 <section class="service-hero">
   <div class="service-hero-inner">
     <h1>Precision. Expertise. Accountability.</h1>
-    <p>PANTAN Technologies was built to serve organizations that operate in high-stakes compliance environments — where documentation quality is not a preference, it is an operational and legal requirement.</p>
+    <p>PANTAN Technologies was built to serve organizations operating in high-stakes compliance environments — where documentation quality is not a preference, it is an operational and legal requirement.</p>
+    <div class="hero-ctas">
+      <a href="contact.html" class="btn-primary">Work With Us</a>
+      <a href="partners.html" class="btn-outline">See Case Studies</a>
+    </div>
   </div>
 </section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div>
+      <div class="sbar-num">10+</div>
+      <div class="sbar-lbl">Years of Delivery Excellence</div>
+    </div>
+    <div>
+      <div class="sbar-num">4</div>
+      <div class="sbar-lbl">Integrated Service Verticals</div>
+    </div>
+    <div>
+      <div class="sbar-num">24/7</div>
+      <div class="sbar-lbl">Offshore Documentation Capacity</div>
+    </div>
+    <div>
+      <div class="sbar-num">48h</div>
+      <div class="sbar-lbl">Avg. Proposal Turnaround</div>
+    </div>
+  </div>
+</div>
+
+<!-- OUR STORY -->
 <section class="section">
   <div class="section-inner">
-    <div class="about-grid">
-      <div>
+    <div class="about-story">
+      <div class="story-text">
         <div class="section-label">Our Story</div>
-        <h2 class="section-title">A Compliance Partner Built for the Most Demanding Clients</h2>
-        <p style="color:var(--slate-600);line-height:1.8;margin-bottom:1.25rem;">PANTAN Technologies was founded to address a persistent gap: organizations operating in regulated, government-adjacent, and enterprise environments consistently lacked access to documentation and compliance support at the standard those environments actually require. Internal teams were stretched. Generic vendors couldn't match the specificity of regulatory frameworks. And the cost of documentation failures was far too high to accept.</p>
-        <p style="color:var(--slate-600);line-height:1.8;margin-bottom:1.25rem;">Over more than a decade, PANTAN developed deep expertise across contract documentation, regulatory compliance, government procurement, and — most recently — a purpose-built SaaS product for Public Access File management. Our client base spans healthcare organizations, IT firms, drone/UAV operators, staffing companies, and government contractors.</p>
-        <p style="color:var(--slate-600);line-height:1.8;">Today PANTAN operates a hybrid delivery model: U.S.-based compliance leadership manages every client engagement and reviews every deliverable, while our trained offshore documentation team provides the depth, speed, and 24/7 capacity that high-volume compliance work demands.</p>
+        <h2>A Compliance Partner Built for the Most Demanding Clients</h2>
+        <p>PANTAN Technologies was founded to close a persistent gap: organizations operating in regulated, government-adjacent, and enterprise environments consistently lacked access to documentation and compliance support at the standard those environments actually require. Internal teams were stretched thin. Generic vendors couldn't match the specificity of regulatory frameworks. And the cost of documentation failures — audit findings, contract losses, regulatory penalties — was far too high to accept.</p>
+        <p>Over more than a decade, PANTAN developed deep expertise across contract documentation, regulatory compliance, government procurement, and — most recently — a purpose-built SaaS product for Public Access File management. Our client base spans healthcare organizations, IT firms, drone/UAV operators, staffing companies, and government contractors.</p>
+        <p>Today PANTAN operates a hybrid delivery model: U.S.-based compliance leadership manages every client engagement and reviews every deliverable, while our trained offshore documentation team provides the depth, speed, and 24/7 capacity that high-volume compliance work demands.</p>
       </div>
       <div>
-        <div class="about-visual">
-          <div class="big-stat">10+</div>
-          <div class="big-label">Years in Compliance &amp; Documentation</div>
-          <div class="about-pills">
-            <span class="about-pill">Contract Review</span>
-            <span class="about-pill">Regulatory Documentation</span>
-            <span class="about-pill">PAF SaaS Platform</span>
-            <span class="about-pill">Government Procurement</span>
-            <span class="about-pill">HIPAA · IT Governance</span>
-            <span class="about-pill">FAA Part 107 / UAV</span>
-            <span class="about-pill">RFP Response Writing</span>
-            <span class="about-pill">24/7 Offshore Delivery</span>
-            <span class="about-pill">U.S.-Based Oversight</span>
-            <span class="about-pill">WBE In Progress</span>
-            <span class="about-pill">DBE In Progress</span>
+        <div class="story-visual">
+          <div class="sv-big">10+</div>
+          <div class="sv-lbl">Years in Compliance &amp; Documentation</div>
+          <div class="sv-pills">
+            <span class="sv-pill">Contract Review</span>
+            <span class="sv-pill">Regulatory Docs</span>
+            <span class="sv-pill">PAF SaaS Platform</span>
+            <span class="sv-pill">Gov. Procurement</span>
+            <span class="sv-pill">HIPAA · IT Governance</span>
+            <span class="sv-pill">FAA Part 107 / UAV</span>
+            <span class="sv-pill">RFP Response Writing</span>
+            <span class="sv-pill">24/7 Offshore Delivery</span>
+            <span class="sv-pill">U.S.-Based Oversight</span>
+            <span class="sv-pill">WBE In Progress</span>
+            <span class="sv-pill">DBE In Progress</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- CORE VALUES -->
 <section class="section section-alt">
   <div class="section-inner">
     <div class="section-head centered">
-      <div class="section-label">Our Delivery Model</div>
-      <h2 class="section-title">Offshore Depth. U.S. Accountability.</h2>
-      <p class="section-intro">What separates PANTAN from traditional documentation outsourcing is the architecture of our oversight — and the depth of regulatory specialization at every layer.</p>
+      <div class="section-label">What We Stand For</div>
+      <h2 class="section-title">Our Core Values</h2>
+      <p class="section-intro">Every engagement, every deliverable, every client interaction is shaped by these principles — not as aspirations, but as operating standards.</p>
     </div>
-    <div class="trust-grid">
-      <div class="trust-card"><div class="t-icon">🇺🇸</div><h4>U.S.-Based Compliance Leadership</h4><p>All client relationships and final document review are managed by U.S.-based compliance leads. Every deliverable is reviewed before release.</p></div>
-      <div class="trust-card"><div class="t-icon">🌐</div><h4>Offshore Documentation Team</h4><p>Our trained offshore specialists handle drafting, organization, and version control — operating 24/7 to meet aggressive client timelines.</p></div>
-      <div class="trust-card"><div class="t-icon">🔍</div><h4>Structured QA Process</h4><p>Every deliverable passes through a defined quality checkpoint ensuring regulatory accuracy and structural completeness.</p></div>
-      <div class="trust-card"><div class="t-icon">⚙️</div><h4>SaaS + Services Integration</h4><p>Our PAF platform works in tandem with our documentation services — seamless from gap identification to document resolution.</p></div>
-      <div class="trust-card"><div class="t-icon">📋</div><h4>Industry-Specific Expertise</h4><p>Healthcare, IT governance, UAV, and government procurement — deep working knowledge of the regulatory frameworks governing each.</p></div>
-      <div class="trust-card"><div class="t-icon">🤝</div><h4>Dedicated Client Engagement</h4><p>Every client has a named account lead. Direct access to the person accountable for your engagement, every time.</p></div>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h4>Accuracy Above All</h4>
+        <p>Every document we deliver has passed through a structured U.S.-based review. We don't ship work that hasn't been verified. QA is non-negotiable — not a checkbox.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤝</div>
+        <h4>Radical Transparency</h4>
+        <p>We tell clients exactly where we stand — on certifications, on timelines, on what our documents can and cannot guarantee. No overselling. No ambiguity.</p>
+      </div>
+      <div class="value-card gold-top">
+        <div class="value-icon">⚡</div>
+        <h4>Speed Without Compromise</h4>
+        <p>Our offshore delivery capacity enables turnaround times that onshore-only firms can't match — without sacrificing the compliance depth and regulatory precision clients require.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📋</div>
+        <h4>Regulatory Depth</h4>
+        <p>We build documentation that reflects how regulators actually evaluate evidence — not how organizations imagine they do. The difference shows up when audits happen.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔒</div>
+        <h4>Client Confidentiality</h4>
+        <p>Compliance engagements involve sensitive organizational information. We treat every client's documentation environment with the same discretion we'd expect for our own.</p>
+      </div>
+      <div class="value-card gold-top">
+        <div class="value-icon">📈</div>
+        <h4>Measurable Outcomes</h4>
+        <p>We define success in client terms — audit clearance rates, contract wins, processing time reductions. Every engagement begins with agreeing on what winning looks like.</p>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- DELIVERY MODEL -->
+<section class="section section-navy">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label section-label-light">Our Delivery Model</div>
+      <h2 class="section-title section-title-light">Offshore Depth. U.S. Accountability. No Compromises.</h2>
+      <p class="section-intro section-intro-light">What separates PANTAN from traditional documentation outsourcing is the architecture of our oversight — and the depth of regulatory specialization at every layer of delivery.</p>
+    </div>
+    <div class="delivery-grid">
+      <div class="del-card"><div class="del-icon">🇺🇸</div><h4>U.S.-Based Compliance Leadership</h4><p>All client relationships and final document review are managed by U.S.-based compliance leads with deep regulatory expertise. Every deliverable is reviewed before release.</p></div>
+      <div class="del-card"><div class="del-icon">🌐</div><h4>Offshore Documentation Team</h4><p>Our trained offshore specialists handle drafting, organization, version control, and high-volume processing — operating 24/7 to meet aggressive client timelines and deadlines.</p></div>
+      <div class="del-card"><div class="del-icon">🔍</div><h4>Structured QA Process</h4><p>Every deliverable passes through a defined quality checkpoint — ensuring regulatory accuracy, structural completeness, and version integrity before client delivery.</p></div>
+      <div class="del-card"><div class="del-icon">⚙️</div><h4>SaaS + Services Integration</h4><p>Our PAF Management Platform works in tandem with our documentation services — seamless workflow from gap identification to document resolution in one ecosystem.</p></div>
+      <div class="del-card"><div class="del-icon">📋</div><h4>Industry-Specific Expertise</h4><p>Healthcare, IT governance, UAV operations, and government procurement — our team holds working knowledge of the specific frameworks governing each sector we serve.</p></div>
+      <div class="del-card"><div class="del-icon">🤝</div><h4>Dedicated Client Engagement</h4><p>Every client has a named account lead. No ticket queues, no generic support — direct access to the person accountable for your engagement, every time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
 <section class="section">
   <div class="section-inner">
     <div class="section-head centered">
-      <div class="section-label">Certifications</div>
+      <div class="section-label">Certifications &amp; Status</div>
       <h2 class="section-title">Transparent About Where We Stand</h2>
       <p class="section-intro">We are a WBE/DBE-in-progress firm actively pursuing certifications. Here is exactly what that means for clients who need diverse supplier documentation today.</p>
     </div>
     <div class="cert-grid">
       <div class="cert-card"><div class="cert-status status-progress">In Progress</div><h5>WBE Certification</h5><p>WBENC certification application is actively in process. Many enterprise diversity programs accept in-progress status — contact us for a current status letter.</p></div>
       <div class="cert-card"><div class="cert-status status-progress">In Progress</div><h5>DBE Certification</h5><p>State transportation agency DBE filing in progress. Supports transportation-funded contract diversity goals and select federal procurement vehicles.</p></div>
-      <div class="cert-card"><div class="cert-status status-active">Available</div><h5>Supplier Diversity Letters</h5><p>We provide ownership documentation and in-progress certification evidence for clients who need supplier diversity credit now.</p></div>
+      <div class="cert-card"><div class="cert-status status-active">Available</div><h5>Supplier Diversity Letters</h5><p>We provide ownership documentation and in-progress certification evidence for clients who need supplier diversity credit now — not after certification completes.</p></div>
       <div class="cert-card"><div class="cert-status status-active">Committed</div><h5>Transparency First</h5><p>We will never overstate our certification status. What is documented here is accurate and can be used for supplier diversity reporting with confidence.</p></div>
       <div class="cert-card"><div class="cert-status status-active">Verified</div><h5>WBE/DBE In-Progress Documentation</h5><p>Contact us to request a formal letter documenting our certification application status, suitable for prime contractor subcontracting plan submissions.</p></div>
       <div class="cert-card"><div class="cert-status status-active">Active</div><h5>Government Vendor Registration</h5><p>SAM.gov registered and maintained. DUNS/UEI verified. Available for federal and state procurement vehicle participation upon contract award.</p></div>
     </div>
   </div>
 </section>
+
 <div class="cta-band">
   <div style="max-width:560px;margin:0 auto;">
     <h2>Ready to Work with a High-End Compliance Partner?</h2>
@@ -128,47 +250,21 @@
     <a href="contact.html" class="btn-white">Start the Conversation</a>
   </div>
 </div>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:.5rem;">
-          <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
-        <rect width="42" height="42" rx="10" fill="#0B1F3A"/>
-        <rect x="1" y="1" width="40" height="40" rx="9" fill="none" stroke="rgba(13,140,114,0.5)" stroke-width="1"/>
-        <path d="M7 31V11h8.5a6.5 6.5 0 0 1 0 13H11v7z" fill="none" stroke="#12B08E" stroke-width="2" stroke-linejoin="round"/>
-        <line x1="7" y1="24" x2="15.5" y2="24" stroke="#12B08E" stroke-width="2"/>
-        <line x1="22" y1="11" x2="36" y2="11" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
-        <line x1="29" y1="11" x2="29" y2="31" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="36" cy="31" r="2" fill="#12B08E" opacity="0.7"/>
-      </svg>
+          <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg"><rect width="42" height="42" rx="10" fill="#0B1F3A"/><rect x="1" y="1" width="40" height="40" rx="9" fill="none" stroke="rgba(13,140,114,0.5)" stroke-width="1"/><path d="M7 31V11h8.5a6.5 6.5 0 0 1 0 13H11v7z" fill="none" stroke="#12B08E" stroke-width="2" stroke-linejoin="round"/><line x1="7" y1="24" x2="15.5" y2="24" stroke="#12B08E" stroke-width="2"/><line x1="22" y1="11" x2="36" y2="11" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/><line x1="29" y1="11" x2="29" y2="31" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/><circle cx="36" cy="31" r="2" fill="#12B08E" opacity="0.7"/></svg>
           <span style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;">PANTAN Technologies</span>
         </div>
         <p>High-end compliance documentation, contract preparation, PAF management SaaS, and government procurement support. U.S.-managed. Offshore-supported. Accuracy-guaranteed.</p>
         <p style="margin-top:.75rem;font-size:.8rem;color:rgba(255,255,255,0.35);">5080 Spectrum Drive, Suite 575E<br>Addison, TX 75001<br>info@pan-tan.com</p>
       </div>
-      <div class="footer-col">
-        <h5>Services</h5>
-        <a href="services/contract-review.html">Contract Review &amp; Templates</a>
-        <a href="services/regulatory-compliance.html">Regulatory Compliance Docs</a>
-        <a href="services/paf-management.html">PAF Management SaaS</a>
-        <a href="services/government-procurement.html">Government Procurement Docs</a>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <a href="about.html">About PANTAN</a>
-        <a href="partners.html">Partners &amp; Case Studies</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <div class="footer-col">
-        <h5>Industries</h5>
-        <a href="services/regulatory-compliance.html">Healthcare</a>
-        <a href="services/regulatory-compliance.html">Information Technology</a>
-        <a href="services/regulatory-compliance.html">Drone / UAV</a>
-        <a href="services/government-procurement.html">Government Contracting</a>
-        <a href="services/paf-management.html">Staffing Firms</a>
-      </div>
+      <div class="footer-col"><h5>Services</h5><a href="services/contract-review.html">Contract Review &amp; Templates</a><a href="services/regulatory-compliance.html">Regulatory Compliance Docs</a><a href="services/paf-management.html">PAF Management SaaS</a><a href="services/government-procurement.html">Government Procurement Docs</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">About PANTAN</a><a href="partners.html">Partners &amp; Case Studies</a><a href="careers.html">Careers</a><a href="contact.html">Contact Us</a></div>
+      <div class="footer-col"><h5>Industries</h5><a href="services/regulatory-compliance.html">Healthcare</a><a href="services/regulatory-compliance.html">Information Technology</a><a href="services/regulatory-compliance.html">Drone / UAV</a><a href="services/government-procurement.html">Government Contracting</a><a href="services/paf-management.html">Staffing Firms</a></div>
     </div>
     <div class="footer-trust">
       <div class="trust-badge"><span class="tb-icon">🔒</span> 256-bit SSL Encrypted</div>

@@ -4,13 +4,83 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | PANTAN Technologies</title>
-  <meta name="description" content="Contact PANTAN Technologies for compliance documentation, contract review, PAF SaaS demos, or government procurement support. Addison, TX.">
+  <meta name="description" content="Contact PANTAN Technologies for compliance documentation, contract review, PAF SaaS demos, or government procurement support. Addison, TX 75001.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1F3A'/%3E%3Cpath d='M10 50V14h13a10 10 0 0 1 0 20H18v16z' fill='none' stroke='%2312B08E' stroke-width='3' stroke-linejoin='round'/%3E%3Cline x1='10' y1='34' x2='23' y2='34' stroke='%2312B08E' stroke-width='3'/%3E%3Cline x1='34' y1='14' x2='54' y2='14' stroke='%23D4A017' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='44' y1='14' x2='44' y2='50' stroke='%23D4A017' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='54' cy='50' r='3' fill='%2312B08E' opacity='0.8'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css">
-  
+  <style>
+    .cp-wrap{background:var(--off-white);padding:60px 2rem 80px}
+    .cp-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:300px 1fr 300px;gap:1.75rem;align-items:start}
+    .cp-left,.cp-right{display:flex;flex-direction:column;gap:1.25rem}
+    .csc{background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:1.4rem 1.5rem;box-shadow:var(--shadow-card);transition:border-color .2s,transform .2s}
+    .csc:hover{border-color:var(--teal);transform:translateY(-2px)}
+    .csc.teal-top{border-top:3px solid var(--teal)}
+    .csc.gold-top{border-top:3px solid var(--gold)}
+    .csc-head{display:flex;align-items:center;gap:10px;margin-bottom:.85rem}
+    .csc-ico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .bg-teal{background:var(--teal-pale)}.bg-gold{background:var(--gold-pale)}.bg-slate{background:var(--slate-100)}
+    .csc-title{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--navy);line-height:1.25}
+    .csc-sub{font-size:.7rem;font-weight:600;letter-spacing:.4px;text-transform:uppercase;color:var(--teal);margin-top:1px}
+    .csc-sub.gold{color:var(--gold)}
+    .csc-body{font-size:.83rem;color:var(--slate-600);line-height:1.6;margin-bottom:1rem}
+    .csc-checks{list-style:none;margin-bottom:1rem}
+    .csc-checks li{font-size:.82rem;color:var(--slate-600);padding:.25rem 0;display:flex;align-items:center;gap:7px}
+    .csc-checks li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0}
+    .csc-stats{display:flex;gap:1rem;margin-bottom:1rem}
+    .cstat{text-align:center}
+    .cstat-num{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--gold);line-height:1}
+    .cstat-lbl{font-size:.68rem;color:var(--slate-400);margin-top:2px}
+    .cbtn{display:block;text-align:center;text-decoration:none;font-family:var(--font-body);font-size:.82rem;font-weight:700;padding:.6rem 1rem;border-radius:7px;transition:background .2s,transform .15s;cursor:pointer;border:none;width:100%}
+    .cbtn.teal{background:var(--teal);color:var(--white)}.cbtn.teal:hover{background:var(--teal-light)}
+    .cbtn.gold{background:var(--gold);color:var(--white)}.cbtn.gold:hover{background:var(--gold-light)}
+    .cbtn.navy{background:var(--navy);color:var(--white)}.cbtn.navy:hover{background:var(--navy-light)}
+    .cbtn.outline{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}.cbtn.outline:hover{background:var(--teal-pale)}
+    /* center form */
+    .cfc{background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:2.5rem;box-shadow:var(--shadow-card)}
+    .cfc h2{font-family:var(--font-display);font-size:1.6rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+    .cfc-sub{font-size:.9rem;color:var(--slate-600);margin-bottom:1.75rem;line-height:1.6}
+    .cfg{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .cfg-g{display:flex;flex-direction:column;gap:.38rem}
+    .cfg-g.full{grid-column:1/-1}
+    .cfg-g label{font-size:.8rem;font-weight:600;color:var(--slate-800)}
+    .cfg-g input,.cfg-g select,.cfg-g textarea{font-family:var(--font-body);font-size:.9rem;padding:.7rem .95rem;border:1.5px solid var(--slate-200);border-radius:8px;outline:none;background:var(--white);color:var(--slate-800);transition:border-color .18s;width:100%}
+    .cfg-g input:focus,.cfg-g select:focus,.cfg-g textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,140,114,0.08)}
+    .cfg-g textarea{resize:vertical;min-height:130px}
+    .cf-note{font-size:.76rem;color:var(--slate-400);grid-column:1/-1;line-height:1.55;margin-top:.25rem}
+    .cf-note a{color:var(--teal)}
+    .cfsub{background:var(--gold);color:var(--white);font-family:var(--font-body);font-size:1rem;font-weight:700;padding:.9rem 2rem;border-radius:8px;border:none;cursor:pointer;width:100%;margin-top:.5rem;transition:background .2s,transform .15s;letter-spacing:.3px}
+    .cfsub:hover{background:var(--gold-light);transform:translateY(-1px)}
+    /* right col */
+    .c-ofc{background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);border-top:3px solid var(--teal)}
+    .c-ofc-hd{padding:1.25rem 1.5rem 0}
+    .c-ofc-hd h4{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:.15rem}
+    .c-ofc-since{font-size:.7rem;font-weight:600;color:var(--teal);text-transform:uppercase;letter-spacing:.5px}
+    .c-map{height:160px;overflow:hidden}
+    .c-map iframe{width:100%;height:100%;border:none;display:block}
+    .c-map-lnk{display:block;text-align:center;background:var(--off-white);border-top:1px solid var(--slate-100);color:var(--slate-600);text-decoration:none;font-size:.8rem;font-weight:600;padding:.6rem;transition:background .18s,color .18s}
+    .c-map-lnk:hover{background:var(--teal-pale);color:var(--teal)}
+    .c-ofc-det{padding:1rem 1.5rem 1.5rem}
+    .c-ofc-row{display:flex;align-items:flex-start;gap:9px;font-size:.83rem;color:var(--slate-600);margin-bottom:.6rem;line-height:1.5}
+    .c-ofc-row .ico{font-size:.95rem;flex-shrink:0;margin-top:1px}
+    .c-ofc-row strong{color:var(--navy)}
+    .c-ofc-row a{color:var(--teal);text-decoration:none}
+    .c-ofc-row a:hover{text-decoration:underline}
+    .c-qk{background:var(--white);border:1px solid var(--slate-200);border-radius:var(--radius-lg);padding:1.4rem 1.5rem;box-shadow:var(--shadow-card)}
+    .c-qk h4{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--slate-400);margin-bottom:.85rem}
+    .c-qk-lnk{display:flex;align-items:center;gap:8px;font-size:.87rem;color:var(--teal);text-decoration:none;padding:.4rem 0;border-bottom:1px solid var(--slate-100);transition:color .18s}
+    .c-qk-lnk:last-child{border-bottom:none}
+    .c-qk-lnk:hover{color:var(--teal-light)}
+    .c-qk-lnk::before{content:'›';font-size:1.1rem;font-weight:700}
+    .c-trust{background:var(--navy);border-radius:var(--radius-lg);padding:1.25rem 1.5rem}
+    .c-trust-ttl{font-size:.72rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:.85rem}
+    .c-trust-row{display:flex;align-items:center;gap:8px;font-size:.8rem;color:rgba(255,255,255,0.65);padding:.3rem 0}
+    .c-trust-row .ti{color:var(--teal-light);font-size:.85rem}
+    @media(max-width:1100px){.cp-inner{grid-template-columns:260px 1fr 260px}}
+    @media(max-width:900px){.cp-inner{grid-template-columns:1fr}.cp-left,.cp-right{display:grid;grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){.cp-left,.cp-right{grid-template-columns:1fr}.cfg{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
 <nav class="site-nav">
@@ -35,9 +105,7 @@
       <li><a href="partners.html">Partners</a></li>
       <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
     </ul>
-    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
@@ -51,124 +119,188 @@
 
 <section class="service-hero">
   <div class="service-hero-inner">
-    <h1>Let's Talk About What You Need</h1>
-    <p>Our compliance specialists will assess your situation and recommend a clear path forward. We respond within one business day.</p>
+    <h1>Get in Touch</h1>
+    <p>Tell us your compliance challenge. Our team will respond within one business day with a clear path forward — no sales pitch, just an honest assessment.</p>
   </div>
 </section>
-<section class="section">
-  <div class="section-inner">
-    <div class="contact-3col">
-      <div class="contact-cta-card">
-        <div class="cta-icon">📋</div>
-        <h4>Request a Capabilities Statement</h4>
-        <p>Need our company profile or certification letters for a procurement submission? Request it here.</p>
-        <a href="#" onclick="document.getElementById('contact-subject').value='Capabilities Statement Request'" class="btn-teal" style="width:100%;margin-bottom:.75rem;">Request Capabilities Statement</a>
-        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.12);width:100%;margin:.5rem 0;">
-        <div class="cta-icon" style="margin-top:.75rem;">🗂️</div>
-        <h4>Schedule a PAF Demo</h4>
-        <p>See our PAF Management SaaS platform in action. 30-minute live session with a compliance specialist.</p>
-        <a href="#" onclick="document.getElementById('contact-subject').value='PAF Management SaaS — Demo Request'" class="btn-gold" style="width:100%;text-align:center;border-radius:8px;">Schedule a Demo</a>
-        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.12);width:100%;margin:.75rem 0;">
-        <div style="font-size:.78rem;color:rgba(255,255,255,0.45);line-height:1.6;">
-          📍 5080 Spectrum Drive, Suite 575E<br>Addison, TX 75001<br><br>
-          📧 info@pan-tan.com<br><br>
-          ⏱️ Response within 1 business day
+
+<div class="cp-wrap">
+  <div class="cp-inner">
+
+    <!-- LEFT -->
+    <div class="cp-left">
+
+      <div class="csc teal-top">
+        <div class="csc-head">
+          <div class="csc-ico bg-teal">📄</div>
+          <div><div class="csc-title">Contract Review &amp; Templates</div><div class="csc-sub">Documentation</div></div>
         </div>
+        <p class="csc-body">NDAs, MSAs, SOWs reviewed for gaps and delivered as compliance-aligned, version-controlled templates ready to execute at scale.</p>
+        <ul class="csc-checks">
+          <li>Gap analysis &amp; risk flagging</li>
+          <li>Version control frameworks</li>
+          <li>48-hour turnaround available</li>
+        </ul>
+        <button class="cbtn teal" onclick="setSubject('Contract Review &amp; Template Preparation')">Request Contract Support →</button>
       </div>
-      <div class="form-card">
-        <h4>Send Us a Message</h4>
-        <form id="contact-form" class="form-grid" onsubmit="handleFormSubmit(event)">
-          <div class="form-group"><label>First Name *</label><input type="text" required placeholder="Jane"></div>
-          <div class="form-group"><label>Last Name *</label><input type="text" required placeholder="Smith"></div>
-          <div class="form-group"><label>Organization *</label><input type="text" required placeholder="Your Organization Name"></div>
-          <div class="form-group"><label>Work Email *</label><input type="email" required placeholder="jane@company.com"></div>
-          <div class="form-group"><label>Phone</label><input type="tel" placeholder="(555) 000-0000"></div>
-          <div class="form-group"><label>Subject / Service *</label>
-            <select id="contact-subject" required>
-              <option value="">Select a subject...</option>
-              <option>Contract Review &amp; Template Preparation</option>
-              <option>Regulatory Compliance Documentation — HIPAA</option>
-              <option>Regulatory Compliance Documentation — IT Governance</option>
-              <option>Regulatory Compliance Documentation — Drone / FAA Part 107</option>
-              <option>PAF Management SaaS — Demo Request</option>
-              <option>PAF Management SaaS — Pricing Inquiry</option>
-              <option>Government Vendor / RFP Documentation</option>
-              <option>Government Certification Application (WBE/DBE/SBA)</option>
-              <option>Teaming / Subcontracting Inquiry</option>
-              <option>Capabilities Statement Request</option>
-              <option>Retainer / Ongoing Compliance Support</option>
-              <option>Careers / Employment Inquiry</option>
-              <option>General Inquiry</option>
-            </select>
+
+      <div class="csc teal-top">
+        <div class="csc-head">
+          <div class="csc-ico bg-teal">🛡️</div>
+          <div><div class="csc-title">Regulatory Compliance Docs</div><div class="csc-sub">Healthcare · IT · Drone/UAV</div></div>
+        </div>
+        <p class="csc-body">Audit-ready documentation for HIPAA, IT governance, and FAA Part 107 — built to satisfy regulators and withstand scrutiny.</p>
+        <ul class="csc-checks">
+          <li>Compliance gap assessment</li>
+          <li>Policy &amp; procedure development</li>
+          <li>Ongoing retainer options</li>
+        </ul>
+        <button class="cbtn teal" onclick="setSubject('Regulatory Compliance Documentation — HIPAA')">Schedule a Gap Assessment →</button>
+      </div>
+
+      <div class="csc gold-top">
+        <div class="csc-head">
+          <div class="csc-ico bg-gold">🗂️</div>
+          <div><div class="csc-title">PAF Management SaaS</div><div class="csc-sub gold">⬡ Platform</div></div>
+        </div>
+        <p class="csc-body">Purpose-built compliance platform for H-1B staffing firms — automated PAF workflows, completeness checks, and DOL audit-ready exports.</p>
+        <div class="csc-stats">
+          <div class="cstat"><div class="cstat-num">24/7</div><div class="cstat-lbl">Monitoring</div></div>
+          <div class="cstat"><div class="cstat-num">1-click</div><div class="cstat-lbl">DOL Export</div></div>
+          <div class="cstat"><div class="cstat-num">Live</div><div class="cstat-lbl">Dashboard</div></div>
+        </div>
+        <button class="cbtn gold" onclick="setSubject('PAF Management SaaS — Demo Request')">Schedule a Platform Demo →</button>
+      </div>
+
+      <div class="csc teal-top">
+        <div class="csc-head">
+          <div class="csc-ico bg-slate">🏛️</div>
+          <div><div class="csc-title">Government Procurement Docs</div><div class="csc-sub">RFP · Certifications · SAM.gov</div></div>
+        </div>
+        <p class="csc-body">RFP/RFQ responses, WBE/DBE certification packages, capability statements, and SAM.gov documentation — built to win contracts.</p>
+        <ul class="csc-checks">
+          <li>WBE / DBE / SBA 8(a) applications</li>
+          <li>Capability statements</li>
+          <li>Technical approach narratives</li>
+        </ul>
+        <button class="cbtn navy" onclick="setSubject('Government Vendor / RFP Documentation')">Start a Document Project →</button>
+      </div>
+
+    </div>
+
+    <!-- CENTER -->
+    <div>
+      <div class="cfc">
+        <h2>Send Us a Message</h2>
+        <p class="cfc-sub">Fill out the form and our compliance team will respond within one business day.</p>
+        <form id="contact-form" onsubmit="handleContactSubmit(event)">
+          <div class="cfg">
+            <div class="cfg-g"><label>First Name *</label><input type="text" required placeholder="Jane"></div>
+            <div class="cfg-g"><label>Last Name *</label><input type="text" required placeholder="Smith"></div>
+            <div class="cfg-g"><label>Work Email *</label><input type="email" required placeholder="jane@company.com"></div>
+            <div class="cfg-g"><label>Phone</label><input type="tel" placeholder="(555) 000-0000"></div>
+            <div class="cfg-g full"><label>Organization *</label><input type="text" required placeholder="Your Organization Name"></div>
+            <div class="cfg-g full">
+              <label>Reason for Contact *</label>
+              <select id="cf-subject" required>
+                <option value="">Select a reason...</option>
+                <option>Contract Review &amp; Template Preparation</option>
+                <option>Regulatory Compliance Documentation — HIPAA</option>
+                <option>Regulatory Compliance Documentation — IT Governance</option>
+                <option>Regulatory Compliance Documentation — Drone / FAA Part 107</option>
+                <option>PAF Management SaaS — Demo Request</option>
+                <option>PAF Management SaaS — Pricing Inquiry</option>
+                <option>Government Vendor / RFP Documentation</option>
+                <option>Government Certification Application (WBE/DBE/SBA)</option>
+                <option>Teaming / Subcontracting Inquiry</option>
+                <option>Capabilities Statement Request</option>
+                <option>Retainer / Ongoing Compliance Support</option>
+                <option>Careers / Employment Inquiry</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="cfg-g full">
+              <label>Tell us about your needs *</label>
+              <textarea required placeholder="Describe your compliance environment, documentation challenge, regulatory deadlines, or any other relevant context..."></textarea>
+            </div>
+            <p class="cf-note">By submitting this form you agree to be contacted by PANTAN Technologies. We do not sell or share your information. See our <a href="legal/privacy.html">Privacy Policy</a>.</p>
           </div>
-          <div class="form-group full"><label>How Can We Help? *</label><textarea required placeholder="Describe your compliance environment, documentation challenge, regulatory deadlines, or any other relevant context..."></textarea></div>
-          <p class="form-note">By submitting this form, you agree to be contacted by PANTAN Technologies. We do not sell or share your information. See our <a href="legal/privacy.html">Privacy Policy</a>.</p>
-          <div class="full" style="grid-column:1/-1;"><button type="submit" class="form-submit">Submit Your Message →</button></div>
+          <button type="submit" class="cfsub" id="cf-btn">Send Message →</button>
         </form>
       </div>
-      <div class="contact-cta-card">
-        <div class="cta-icon">🏛️</div>
-        <h4>Government &amp; Procurement Documentation</h4>
-        <p>Working on a federal, state, or local solicitation? We prep RFP responses, capability statements, and certification packages fast.</p>
-        <a href="#" onclick="document.getElementById('contact-subject').value='Government Vendor / RFP Documentation'" class="btn-teal" style="width:100%;margin-bottom:.75rem;">Start a Document Project</a>
-        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.12);width:100%;margin:.5rem 0;">
-        <div class="cta-icon" style="margin-top:.75rem;">💼</div>
-        <h4>Careers &amp; Open Roles</h4>
-        <p>Healthcare, IT, or STEM internship? Browse our current openings or submit an open application.</p>
-        <a href="careers.html" class="btn-outline" style="width:100%;text-align:center;">View Open Positions</a>
-        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.12);width:100%;margin:.75rem 0;">
-        <div style="font-size:.78rem;color:rgba(255,255,255,0.45);line-height:1.6;">
-          🔒 256-bit SSL Encrypted<br>
-          ✅ GDPR Compliant<br>
-          ✅ FTC Compliant<br>
-          ⚖️ 29 CFR § 1625.2 Compliant<br><br>
-          All submissions are secure and confidential.
+    </div>
+
+    <!-- RIGHT -->
+    <div class="cp-right">
+
+      <div class="c-ofc">
+        <div class="c-ofc-hd">
+          <h4>Our Office</h4>
+          <div class="c-ofc-since">Addison, TX · Est. 2013</div>
+        </div>
+        <div class="c-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3347.058!2d-96.83748!3d32.96296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c2a9b5a5a5a5b%3A0x0!2s5080+Spectrum+Dr%2C+Addison%2C+TX+75001!5e0!3m2!1sen!2sus!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="PANTAN Technologies Office"></iframe>
+        </div>
+        <a href="https://maps.google.com/?q=5080+Spectrum+Drive+Suite+575E+Addison+TX+75001" target="_blank" rel="noopener noreferrer" class="c-map-lnk">Open in Google Maps →</a>
+        <div class="c-ofc-det">
+          <div class="c-ofc-row"><span class="ico">📍</span><span>5080 Spectrum Drive, Suite 575E<br>Addison, TX 75001</span></div>
+          <div class="c-ofc-row"><span class="ico">📧</span><span><a href="mailto:info@pan-tan.com">info@pan-tan.com</a></span></div>
+          <div class="c-ofc-row"><span class="ico">⏱️</span><span><strong>Response:</strong> Within 1 business day<br><span style="font-size:.78rem;color:var(--slate-400)">24/7 offshore documentation capacity</span></span></div>
         </div>
       </div>
+
+      <div class="c-qk">
+        <h4>Quick Actions</h4>
+        <a href="services/paf-management.html" class="c-qk-lnk">Schedule a PAF Platform Demo</a>
+        <a href="partners.html" class="c-qk-lnk">Request Capabilities Statement</a>
+        <a href="careers.html" class="c-qk-lnk">Browse Open Positions</a>
+        <a href="services/index.html" class="c-qk-lnk">View All Services</a>
+        <a href="about.html" class="c-qk-lnk">Learn About PANTAN</a>
+      </div>
+
+      <div class="csc teal-top">
+        <div class="csc-head">
+          <div class="csc-ico bg-teal">📋</div>
+          <div><div class="csc-title">Need a Capabilities Statement?</div><div class="csc-sub">Procurement &amp; Diversity</div></div>
+        </div>
+        <p class="csc-body">Request our capabilities statement, WBE/DBE in-progress letters, or supplier diversity documentation for your procurement submission.</p>
+        <ul class="csc-checks">
+          <li>WBE / DBE in-progress letters</li>
+          <li>Company profile &amp; credentials</li>
+          <li>SAM.gov verification available</li>
+        </ul>
+        <button class="cbtn outline" onclick="setSubject('Capabilities Statement Request')">Request Capabilities Statement</button>
+      </div>
+
+      <div class="c-trust">
+        <div class="c-trust-ttl">Security &amp; Compliance</div>
+        <div class="c-trust-row"><span class="ti">🔒</span> 256-bit SSL Encrypted</div>
+        <div class="c-trust-row"><span class="ti">✅</span> GDPR Compliant</div>
+        <div class="c-trust-row"><span class="ti">✅</span> FTC Compliant</div>
+        <div class="c-trust-row"><span class="ti">⚖️</span> 29 CFR § 1625.2 Compliant</div>
+        <div class="c-trust-row"><span class="ti">🛡️</span> WBE / DBE Certification In Progress</div>
+        <div style="margin-top:.85rem;padding-top:.85rem;border-top:1px solid rgba(255,255,255,0.1);font-size:.75rem;color:rgba(255,255,255,0.35)">All submissions are secure and confidential.</div>
+      </div>
+
     </div>
+
   </div>
-</section>
+</div>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:.5rem;">
-          <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
-        <rect width="42" height="42" rx="10" fill="#0B1F3A"/>
-        <rect x="1" y="1" width="40" height="40" rx="9" fill="none" stroke="rgba(13,140,114,0.5)" stroke-width="1"/>
-        <path d="M7 31V11h8.5a6.5 6.5 0 0 1 0 13H11v7z" fill="none" stroke="#12B08E" stroke-width="2" stroke-linejoin="round"/>
-        <line x1="7" y1="24" x2="15.5" y2="24" stroke="#12B08E" stroke-width="2"/>
-        <line x1="22" y1="11" x2="36" y2="11" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
-        <line x1="29" y1="11" x2="29" y2="31" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="36" cy="31" r="2" fill="#12B08E" opacity="0.7"/>
-      </svg>
+          <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg"><rect width="42" height="42" rx="10" fill="#0B1F3A"/><rect x="1" y="1" width="40" height="40" rx="9" fill="none" stroke="rgba(13,140,114,0.5)" stroke-width="1"/><path d="M7 31V11h8.5a6.5 6.5 0 0 1 0 13H11v7z" fill="none" stroke="#12B08E" stroke-width="2" stroke-linejoin="round"/><line x1="7" y1="24" x2="15.5" y2="24" stroke="#12B08E" stroke-width="2"/><line x1="22" y1="11" x2="36" y2="11" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/><line x1="29" y1="11" x2="29" y2="31" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/><circle cx="36" cy="31" r="2" fill="#12B08E" opacity="0.7"/></svg>
           <span style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;">PANTAN Technologies</span>
         </div>
         <p>High-end compliance documentation, contract preparation, PAF management SaaS, and government procurement support. U.S.-managed. Offshore-supported. Accuracy-guaranteed.</p>
         <p style="margin-top:.75rem;font-size:.8rem;color:rgba(255,255,255,0.35);">5080 Spectrum Drive, Suite 575E<br>Addison, TX 75001<br>info@pan-tan.com</p>
       </div>
-      <div class="footer-col">
-        <h5>Services</h5>
-        <a href="services/contract-review.html">Contract Review &amp; Templates</a>
-        <a href="services/regulatory-compliance.html">Regulatory Compliance Docs</a>
-        <a href="services/paf-management.html">PAF Management SaaS</a>
-        <a href="services/government-procurement.html">Government Procurement Docs</a>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <a href="about.html">About PANTAN</a>
-        <a href="partners.html">Partners &amp; Case Studies</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      <div class="footer-col">
-        <h5>Industries</h5>
-        <a href="services/regulatory-compliance.html">Healthcare</a>
-        <a href="services/regulatory-compliance.html">Information Technology</a>
-        <a href="services/regulatory-compliance.html">Drone / UAV</a>
-        <a href="services/government-procurement.html">Government Contracting</a>
-        <a href="services/paf-management.html">Staffing Firms</a>
-      </div>
+      <div class="footer-col"><h5>Services</h5><a href="services/contract-review.html">Contract Review &amp; Templates</a><a href="services/regulatory-compliance.html">Regulatory Compliance Docs</a><a href="services/paf-management.html">PAF Management SaaS</a><a href="services/government-procurement.html">Government Procurement Docs</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">About PANTAN</a><a href="partners.html">Partners &amp; Case Studies</a><a href="careers.html">Careers</a><a href="contact.html">Contact Us</a></div>
+      <div class="footer-col"><h5>Industries</h5><a href="services/regulatory-compliance.html">Healthcare</a><a href="services/regulatory-compliance.html">Information Technology</a><a href="services/regulatory-compliance.html">Drone / UAV</a><a href="services/government-procurement.html">Government Contracting</a><a href="services/paf-management.html">Staffing Firms</a></div>
     </div>
     <div class="footer-trust">
       <div class="trust-badge"><span class="tb-icon">🔒</span> 256-bit SSL Encrypted</div>
@@ -191,5 +323,24 @@
   </div>
 </footer>
 <script src="assets/js/main.js"></script>
+<script>
+function setSubject(val){
+  var el=document.getElementById('cf-subject');
+  if(el){
+    for(var i=0;i<el.options.length;i++){
+      if(el.options[i].text.includes(val.replace('&amp;','&'))||el.options[i].value===val){el.selectedIndex=i;break;}
+    }
+    el.closest('form').scrollIntoView({behavior:'smooth',block:'center'});
+  }
+}
+function handleContactSubmit(e){
+  e.preventDefault();
+  var btn=document.getElementById('cf-btn');
+  btn.textContent='✓ Message Sent — We\'ll be in touch within 1 business day';
+  btn.style.background='#0D8C72';
+  btn.disabled=true;
+  document.querySelectorAll('#contact-form input,#contact-form select,#contact-form textarea').forEach(function(el){el.disabled=true});
+}
+</script>
 </body>
 </html>
