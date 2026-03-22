@@ -9,3 +9,6 @@ node_modules/
 .env.local
 __pycache__/
 *.pyc
+*.zip
+pantan-v2/
+pantan/

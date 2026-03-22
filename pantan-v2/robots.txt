@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /assets/
-
-Sitemap: https://pan-tan.com/sitemap.xml
