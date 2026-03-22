@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers | PANTAN Technologies</title>
+  <meta name="description" content="Open positions in healthcare staffing, IT, and STEM internships at PANTAN Technologies — Addison, TX and remote.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1F3A'/%3E%3Cpath d='M10 50V14h13a10 10 0 0 1 0 20H18v16z' fill='none' stroke='%2312B08E' stroke-width='3' stroke-linejoin='round'/%3E%3Cline x1='10' y1='34' x2='23' y2='34' stroke='%2312B08E' stroke-width='3'/%3E%3Cline x1='34' y1='14' x2='54' y2='14' stroke='%23D4A017' stroke-width='3' stroke-linecap='round'/%3E%3Cline x1='44' y1='14' x2='44' y2='50' stroke='%23D4A017' stroke-width='3' stroke-linecap='round'/%3E%3Ccircle cx='54' cy='50' r='3' fill='%2312B08E' opacity='0.8'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+</head>
+<body>
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">
+      <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+        <rect width="42" height="42" rx="10" fill="#0B1F3A"/>
+        <rect x="1" y="1" width="40" height="40" rx="9" fill="none" stroke="rgba(13,140,114,0.5)" stroke-width="1"/>
+        <path d="M7 31V11h8.5a6.5 6.5 0 0 1 0 13H11v7z" fill="none" stroke="#12B08E" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="7" y1="24" x2="15.5" y2="24" stroke="#12B08E" stroke-width="2"/>
+        <line x1="22" y1="11" x2="36" y2="11" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+        <line x1="29" y1="11" x2="29" y2="31" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="36" cy="31" r="2" fill="#12B08E" opacity="0.7"/>
+      </svg>
+      <span class="nav-logo-text">PANTAN Technologies</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services/index.html">Services</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="partners.html">Partners</a></li>
+      <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">Home</a>
+  <a href="services/index.html">Services</a>
+  <a href="careers.html">Careers</a>
+  <a href="about.html">About</a>
+  <a href="partners.html">Partners</a>
+  <a href="contact.html">Get in Touch</a>
+</div>
+
+<section class="service-hero">
+  <div class="service-hero-inner">
+    <h1>Careers at PANTAN Technologies</h1>
+    <p>Join a fast-growing compliance and documentation firm serving enterprise, healthcare, and government clients. We offer internships, clinical placements, IT roles, and more — in a mission-driven environment built for growth.</p>
+    <div class="hero-ctas">
+      <a href="contact.html" class="btn-primary">Submit Your Resume</a>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head">
+      <div class="section-label">Open Positions</div>
+      <h2 class="section-title">Current Openings</h2>
+      <p class="section-intro">We partner with enterprise clients and healthcare networks to place qualified professionals in contract, travel, and internship roles. All positions are actively recruiting.</p>
+    </div>
+    <div class="job-filters">
+      <button class="job-filter active" onclick="filterJobs('all',this)">All Openings</button>
+      <button class="job-filter" onclick="filterJobs('healthcare',this)">Healthcare</button>
+      <button class="job-filter" onclick="filterJobs('it',this)">Information Technology</button>
+      <button class="job-filter" onclick="filterJobs('internship',this)">Internships</button>
+    </div>
+    <div class="jobs-grid" id="jobs-grid">
+
+      <div class="job-card" data-cat="healthcare">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🔬</span><span class="job-status">Open</span><span class="job-category-badge">Healthcare — Allied Health</span></div>
+          <div class="job-title">Cardiac Catheterization Technician</div>
+          <div class="job-meta"><span>🏢 Henry Ford Jackson Hospital</span><span>📍 Jackson, MI</span><span>💼 Contract · 13 weeks (renewable)</span><span>💰 Competitive</span></div>
+          <p class="job-desc">Skilled Cardiac Cath Lab Technician needed for a busy cardiac catheterization lab. Must have experience in diagnostic and interventional procedures. RCIS certification preferred.</p>
+          <div class="job-tags"><span class="job-tag">Cath Lab</span><span class="job-tag">Interventional</span><span class="job-tag">RCIS</span><span class="job-tag">BLS</span><span class="job-tag">ACLS</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="healthcare">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🩺</span><span class="job-status">Open</span><span class="job-category-badge">Healthcare — Nursing</span></div>
+          <div class="job-title">Registered Nurse — ICU (Travel)</div>
+          <div class="job-meta"><span>🏢 HWL Health System</span><span>📍 Utica, NY</span><span>💼 Travel Contract · 13 weeks</span><span>💰 Competitive</span></div>
+          <p class="job-desc">Experienced ICU Travel RN needed for a high-acuity critical care unit. Must have minimum 2 years recent ICU experience. BLS and ACLS required. Compact license preferred.</p>
+          <div class="job-tags"><span class="job-tag">ICU</span><span class="job-tag">Critical Care</span><span class="job-tag">BLS</span><span class="job-tag">ACLS</span><span class="job-tag">Travel RN</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="healthcare">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🧠</span><span class="job-status">Open</span><span class="job-category-badge">Healthcare — Behavioral Health</span></div>
+          <div class="job-title">Mental Health Clinician</div>
+          <div class="job-meta"><span>🏢 NYC Health + Hospitals</span><span>📍 New York, NY (Rikers Island)</span><span>💼 Contract · 6 months</span><span>💰 Competitive</span></div>
+          <p class="job-desc">Licensed mental health clinician needed for a correctional healthcare setting. LCSW or LMHC license required. Experience with forensic or correctional populations strongly preferred.</p>
+          <div class="job-tags"><span class="job-tag">LCSW</span><span class="job-tag">LMHC</span><span class="job-tag">Behavioral Health</span><span class="job-tag">Correctional</span><span class="job-tag">Mental Health</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="healthcare">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🏥</span><span class="job-status">Open</span><span class="job-category-badge">Healthcare — Pharmacy</span></div>
+          <div class="job-title">Clinical Pharmacist — Hospital (Travel)</div>
+          <div class="job-meta"><span>🏢 Regional Medical Center</span><span>📍 Detroit, MI</span><span>💼 Travel Contract · 13 weeks</span><span>💰 Competitive</span></div>
+          <p class="job-desc">Clinical Pharmacist needed to support inpatient hospital pharmacy operations. PharmD required. Must hold active state licensure. Experience in acute care or critical care pharmacy preferred.</p>
+          <div class="job-tags"><span class="job-tag">PharmD</span><span class="job-tag">Inpatient Pharmacy</span><span class="job-tag">Acute Care</span><span class="job-tag">Travel</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="it">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🏥</span><span class="job-status">Open</span><span class="job-category-badge">Information Technology — Healthcare IT</span></div>
+          <div class="job-title">EHR Systems Analyst — Epic (Remote)</div>
+          <div class="job-meta"><span>🏢 Integrated Health System</span><span>📍 Remote (U.S.)</span><span>💼 Contract · 12 months</span><span>💰 $75–95/hr</span></div>
+          <p class="job-desc">Experienced EHR Systems Analyst to support Epic implementation, optimization, and end-user support. Must have hands-on Epic build and configuration experience. Epic certification(s) required. HIPAA environment experience essential.</p>
+          <div class="job-tags"><span class="job-tag">Epic EHR</span><span class="job-tag">HL7 / FHIR</span><span class="job-tag">HIPAA</span><span class="job-tag">Clinical Workflow</span><span class="job-tag">Healthcare IT</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="it">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">☁️</span><span class="job-status">Open</span><span class="job-category-badge">Information Technology — Cloud</span></div>
+          <div class="job-title">Cloud Infrastructure Engineer (AWS / Azure)</div>
+          <div class="job-meta"><span>🏢 Federal Agency Contractor</span><span>📍 Hybrid — Washington, DC</span><span>💼 Contract · 6 months (renewable)</span><span>💰 $100–125/hr</span></div>
+          <p class="job-desc">Cloud Infrastructure Engineer to design, deploy, and manage cloud environments for a federal agency IT modernization program. Must hold active Secret clearance or be clearance-eligible. AWS Solutions Architect or Azure Expert certification required.</p>
+          <div class="job-tags"><span class="job-tag">AWS</span><span class="job-tag">Azure</span><span class="job-tag">IaC / Terraform</span><span class="job-tag">FedRAMP</span><span class="job-tag">Secret Clearance</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="it">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🗄️</span><span class="job-status">Open</span><span class="job-category-badge">Information Technology — Data Engineering</span></div>
+          <div class="job-title">Senior Data Engineer (Healthcare Analytics)</div>
+          <div class="job-meta"><span>🏢 Regional Health Network</span><span>📍 Remote (U.S.)</span><span>💼 Contract · 12 months</span><span>💰 $90–115/hr</span></div>
+          <p class="job-desc">Senior Data Engineer to build and maintain enterprise healthcare data pipelines. Must have deep experience with Python, SQL, Apache Spark, and cloud data platforms (Snowflake, Databricks, or Redshift). HIPAA data environment experience required.</p>
+          <div class="job-tags"><span class="job-tag">Python</span><span class="job-tag">SQL</span><span class="job-tag">Apache Spark</span><span class="job-tag">Snowflake</span><span class="job-tag">HIPAA</span><span class="job-tag">ETL/ELT</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="internship">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🎓</span><span class="job-status">Open</span><span class="job-category-badge">Internship — STEM</span><span class="internship-tag">Internship</span></div>
+          <div class="job-title">Software Engineering Intern (Full-Stack)</div>
+          <div class="job-meta"><span>🏢 PANTAN Technologies</span><span>📍 Remote / Addison, TX</span><span>💼 Summer · 10–12 weeks</span><span>💰 Stipend</span></div>
+          <p class="job-desc">Work alongside our engineering team to build features for our PAF Management SaaS platform. You'll contribute to production code in a React/Node.js stack, write tests, and participate in code review. Rising junior or senior in CS, Software Engineering, or related STEM degree.</p>
+          <div class="job-tags"><span class="job-tag">React</span><span class="job-tag">Node.js</span><span class="job-tag">JavaScript</span><span class="job-tag">REST APIs</span><span class="job-tag">Git</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="internship">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🎓</span><span class="job-status">Open</span><span class="job-category-badge">Internship — STEM</span><span class="internship-tag">Internship</span></div>
+          <div class="job-title">Data Science &amp; Analytics Intern</div>
+          <div class="job-meta"><span>🏢 PANTAN Technologies</span><span>📍 Remote / Addison, TX</span><span>💼 Summer · 10–12 weeks</span><span>💰 Stipend</span></div>
+          <p class="job-desc">Work with PANTAN's product and operations teams to analyze compliance tracking data, build dashboards, and develop predictive models for audit risk scoring. Rising junior/senior in Data Science, Mathematics, Statistics, or Computer Science.</p>
+          <div class="job-tags"><span class="job-tag">Python</span><span class="job-tag">SQL</span><span class="job-tag">Pandas</span><span class="job-tag">Tableau / Power BI</span><span class="job-tag">Machine Learning</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+      <div class="job-card" data-cat="internship">
+        <div class="job-card-top"><div class="job-left">
+          <div class="job-category-row"><span class="job-dept-icon">🎓</span><span class="job-status">Open</span><span class="job-category-badge">Internship — Healthcare IT</span><span class="internship-tag">Internship</span></div>
+          <div class="job-title">Healthcare IT &amp; Compliance Intern</div>
+          <div class="job-meta"><span>🏢 PANTAN Technologies</span><span>📍 Remote / Addison, TX</span><span>💼 Summer · 10–12 weeks</span><span>💰 Stipend</span></div>
+          <p class="job-desc">Support PANTAN's compliance team in preparing HIPAA documentation packages, PAF audits, and IT governance policy drafts. You'll conduct literature reviews, help draft control documentation, and participate in client gap assessment projects. Rising junior/senior in Health Informatics, Information Systems, or Healthcare Administration.</p>
+          <div class="job-tags"><span class="job-tag">HIPAA</span><span class="job-tag">PAF Compliance</span><span class="job-tag">IT Governance</span><span class="job-tag">Policy Writing</span><span class="job-tag">Health Informatics</span></div>
+          <div class="job-actions"><a href="contact.html" class="btn-sm btn-sm-teal">Apply Now →</a></div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="cta-band">
+  <div style="max-width:560px;margin:0 auto;">
+    <h2>Don't See Your Role?</h2>
+    <p>We're always looking for exceptional talent in compliance, documentation, healthcare, and technology. Send us your resume and we'll reach out when the right opening appears.</p>
+    <a href="contact.html" class="btn-white">Submit an Open Application</a>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:.5rem;">
+          <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+        <rect width="42" height="42" rx="10" fill="#0B1F3A"/>
+        <rect x="1" y="1" width="40" height="40" rx="9" fill="none" stroke="rgba(13,140,114,0.5)" stroke-width="1"/>
+        <path d="M7 31V11h8.5a6.5 6.5 0 0 1 0 13H11v7z" fill="none" stroke="#12B08E" stroke-width="2" stroke-linejoin="round"/>
+        <line x1="7" y1="24" x2="15.5" y2="24" stroke="#12B08E" stroke-width="2"/>
+        <line x1="22" y1="11" x2="36" y2="11" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+        <line x1="29" y1="11" x2="29" y2="31" stroke="#D4A017" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="36" cy="31" r="2" fill="#12B08E" opacity="0.7"/>
+      </svg>
+          <span style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:white;">PANTAN Technologies</span>
+        </div>
+        <p>High-end compliance documentation, contract preparation, PAF management SaaS, and government procurement support. U.S.-managed. Offshore-supported. Accuracy-guaranteed.</p>
+        <p style="margin-top:.75rem;font-size:.8rem;color:rgba(255,255,255,0.35);">5080 Spectrum Drive, Suite 575E<br>Addison, TX 75001<br>info@pan-tan.com</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <a href="services/contract-review.html">Contract Review &amp; Templates</a>
+        <a href="services/regulatory-compliance.html">Regulatory Compliance Docs</a>
+        <a href="services/paf-management.html">PAF Management SaaS</a>
+        <a href="services/government-procurement.html">Government Procurement Docs</a>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About PANTAN</a>
+        <a href="partners.html">Partners &amp; Case Studies</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h5>Industries</h5>
+        <a href="services/regulatory-compliance.html">Healthcare</a>
+        <a href="services/regulatory-compliance.html">Information Technology</a>
+        <a href="services/regulatory-compliance.html">Drone / UAV</a>
+        <a href="services/government-procurement.html">Government Contracting</a>
+        <a href="services/paf-management.html">Staffing Firms</a>
+      </div>
+    </div>
+    <div class="footer-trust">
+      <div class="trust-badge"><span class="tb-icon">🔒</span> 256-bit SSL Encrypted</div>
+      <div class="trust-badge"><span class="tb-icon">✅</span> GDPR Compliant</div>
+      <div class="trust-badge"><span class="tb-icon">✅</span> FTC Compliant</div>
+      <div class="trust-badge"><span class="tb-icon">⚖️</span> 29 CFR § 1625.2 Compliant</div>
+      <div class="trust-badge"><span class="tb-icon">🛡️</span> WBE / DBE Certification In Progress</div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 PANTAN Technologies, LLC. All rights reserved.</span>
+      <div class="footer-legal-links">
+        <a href="legal/terms.html">Terms of Service</a>
+        <a href="legal/privacy.html">Privacy Policy</a>
+        <a href="legal/cookies.html">Cookie Policy</a>
+        <a href="legal/ai-terms.html">AI Terms</a>
+        <a href="legal/disclaimer.html">Disclaimer</a>
+        <a href="legal/accessibility.html">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
