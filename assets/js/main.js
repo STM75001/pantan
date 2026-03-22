@@ -9,15 +9,28 @@ function toggleMobileMenu() {
   if (menu) menu.classList.toggle('open');
 }
 
-/* ── Mark active nav link based on current page ── */
+/* ── Active nav link — works on Vercel (cleanUrls) and local file:// preview ── */
 function setActiveNav() {
-  const path = window.location.pathname;
+  const path = window.location.pathname
+    .replace(/\/index\.html$/, '/')   // treat /index.html same as /
+    .replace(/\.html$/, '')           // strip .html for cleanUrls
+    .replace(/\/$/, '') || '/';       // strip trailing slash, keep root as '/'
+
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
     link.classList.remove('active');
-    const href = link.getAttribute('href');
-    if (!href) return;
-    if (path === '/' && href === '/') { link.classList.add('active'); return; }
-    if (href !== '/' && path.startsWith(href)) link.classList.add('active');
+    const href = (link.getAttribute('href') || '')
+      .replace(/\/index\.html$/, '/')
+      .replace(/\.html$/, '')
+      .replace(/\/$/, '') || '/';
+
+    // Exact match for home, prefix match for everything else
+    if (href === '/' && path === '/') {
+      link.classList.add('active');
+    } else if (href !== '/' && path.startsWith('/' + href.replace(/^.*\//, ''))) {
+      link.classList.add('active');
+    } else if (href !== '/' && href !== '' && path.endsWith(href)) {
+      link.classList.add('active');
+    }
   });
 }
 
@@ -34,13 +47,21 @@ function filterJobs(cat, btn) {
 function handleFormSubmit(e) {
   if (e) e.preventDefault();
   const btn = document.querySelector('.form-submit');
-  if (btn) {
+  const form = document.getElementById('contact-form');
+  if (btn && form) {
     btn.textContent = '✓ Message Sent — We\'ll be in touch within 1 business day';
     btn.style.background = '#0D8C72';
     btn.disabled = true;
+    form.querySelectorAll('input, select, textarea').forEach(el => el.disabled = true);
   }
 }
 
+/* ── Smooth scroll to top on internal navigation ── */
+function scrollTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* ── On DOM ready ── */
 document.addEventListener('DOMContentLoaded', function () {
   setActiveNav();
 
@@ -48,11 +69,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('contact-form');
   if (form) form.addEventListener('submit', handleFormSubmit);
 
-  /* Mobile menu close on link click */
+  /* Close mobile menu when any link is clicked */
   document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       const menu = document.getElementById('mobile-menu');
       if (menu) menu.classList.remove('open');
     });
+  });
+
+  /* Close mobile menu when clicking outside it */
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobile-menu');
+    const hamburger = document.querySelector('.hamburger');
+    if (menu && menu.classList.contains('open')) {
+      if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
+        menu.classList.remove('open');
+      }
+    }
   });
 });

@@ -68,7 +68,7 @@ body {
   transition: color .18s, background .18s;
 }
 .nav-links a:hover { color: var(--white); background: rgba(255,255,255,0.08); }
-.nav-links a.active { color: var(--white); }
+.nav-links a.active { color: var(--white); background: rgba(255,255,255,0.12); border-radius: 6px; }
 .nav-cta {
   background: var(--teal) !important;
   color: var(--white) !important;

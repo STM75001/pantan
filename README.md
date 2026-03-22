@@ -5,22 +5,38 @@
 
 ---
 
+## How This Site Works
+
+All changes are made by the development team and delivered as a `.zip` file.
+
+**Your workflow is always 3 commands:**
+```bash
+cd /c/Users/PanTan-Sancus/Projects/pantan-v2
+git add .
+git commit -m "Description of what changed"
+git push
+```
+Vercel auto-deploys within ~30 seconds of every push to `main`.
+
+---
+
 ## Project Structure
 
 ```
-pantan/
-├── index.html                          ← Home page
-├── about.html
-├── careers.html
-├── contact.html
-├── partners.html
+pantan-v2/
+├── index.html                     ← pan-tan.com/
+├── about.html                     ← pan-tan.com/about
+├── careers.html                   ← pan-tan.com/careers
+├── contact.html                   ← pan-tan.com/contact
+├── partners.html                  ← pan-tan.com/partners
+├── 404.html                       ← Custom not-found page
 │
 ├── services/
-│   ├── index.html                      ← Services overview
-│   ├── contract-review.html
-│   ├── regulatory-compliance.html
-│   ├── paf-management.html
-│   └── government-procurement.html
+│   ├── index.html                 ← pan-tan.com/services
+│   ├── contract-review.html       ← pan-tan.com/services/contract-review
+│   ├── regulatory-compliance.html ← pan-tan.com/services/regulatory-compliance
+│   ├── paf-management.html        ← pan-tan.com/services/paf-management
+│   └── government-procurement.html← pan-tan.com/services/government-procurement
 │
 ├── legal/
 │   ├── terms.html
@@ -31,78 +47,22 @@ pantan/
 │   └── accessibility.html
 │
 ├── assets/
-│   ├── css/styles.css                  ← All shared styles (edit once)
-│   └── js/main.js                      ← Nav, mobile menu, form handler
+│   ├── css/styles.css             ← ALL shared styles (one file, all pages)
+│   └── js/main.js                 ← Nav, mobile menu, job filters, form handler
 │
-├── build.py                            ← Regenerates all pages from templates
-├── vercel.json                         ← Deployment config + security headers
-├── robots.txt
-└── sitemap.xml
+├── vercel.json                    ← Deployment config + security headers + 404
+├── robots.txt                     ← Search engine directives
+└── sitemap.xml                    ← 15 canonical URLs for Google
 ```
 
 ---
 
-## Real URLs (with cleanUrls enabled in Vercel)
-
-| Page | URL |
-|---|---|
-| Home | `pan-tan.com` |
-| Services | `pan-tan.com/services` |
-| Contract Review | `pan-tan.com/services/contract-review` |
-| Regulatory Compliance | `pan-tan.com/services/regulatory-compliance` |
-| PAF Management SaaS | `pan-tan.com/services/paf-management` |
-| Government Procurement | `pan-tan.com/services/government-procurement` |
-| Careers | `pan-tan.com/careers` |
-| About | `pan-tan.com/about` |
-| Partners | `pan-tan.com/partners` |
-| Contact | `pan-tan.com/contact` |
-| Terms | `pan-tan.com/legal/terms` |
-| Privacy | `pan-tan.com/legal/privacy` |
-
----
-
-## Making Changes
-
-### Edit shared styles (affects all pages)
-```
-assets/css/styles.css
-```
-
-### Edit shared JavaScript (nav, forms, filters)
-```
-assets/js/main.js
-```
-
-### Edit a specific page
-Open and edit the `.html` file directly.
-
-### Regenerate all pages from the Python template
-```bash
-python3 build.py
-```
-Use this when you want to update nav, footer, or head tags across all pages at once.
-
----
-
-## Git Workflow
-
-```bash
-# After any change
-git add .
-git commit -m "Brief description of what changed"
-git push origin main
-```
-
-Vercel auto-deploys within ~30 seconds of every push to `main`.
-
----
-
-## First-Time Deployment to Vercel
+## First-Time Vercel Deployment
 
 ```bash
 npm install -g vercel
 vercel login          # use Info@srikanthmerianda.com
-vercel --prod
+vercel --prod         # run from inside pantan-v2 folder
 ```
 
 Then in **Vercel Dashboard → Settings → Domains** → add `pan-tan.com` and `www.pan-tan.com`.
@@ -111,18 +71,21 @@ Then in **Vercel Dashboard → Settings → Domains** → add `pan-tan.com` and 
 
 ## DNS: Bluehost → Vercel
 
-### Step 1 — Delete WordPress from Bluehost
-1. cPanel → File Manager → `public_html` → delete all files
+### Step 1 — Delete WordPress from Bluehost FIRST
+1. Bluehost cPanel → File Manager → `public_html` → select all → Delete
 2. cPanel → MySQL Databases → drop the WordPress database
-3. cPanel → Softaculous → remove WordPress installation
+3. cPanel → Softaculous → remove the WordPress installation
 
-### Step 2 — Update DNS Records
-| Type | Host | Value | TTL |
-|---|---|---|---|
-| A | `@` | `76.76.21.21` | 300 |
-| CNAME | `www` | `cname.vercel-dns.com` | 300 |
+### Step 2 — Set DNS records in Bluehost Zone Editor
+| Type  | Host  | Value                  | TTL |
+|-------|-------|------------------------|-----|
+| A     | @     | 76.76.21.21            | 300 |
+| CNAME | www   | cname.vercel-dns.com   | 300 |
 
-Delete any existing A records pointing to old Bluehost IPs first.
+Delete any existing A records pointing to old Bluehost IPs before adding these.
+
+### Step 3 — Add domain in Vercel
+Vercel Dashboard → Settings → Domains → Add `pan-tan.com`
 
 ---
 
@@ -131,7 +94,6 @@ Delete any existing A records pointing to old Bluehost IPs first.
 ```bash
 git config user.name "Srikanth"
 git config user.email "Info@srikanthmerianda.com"
-git remote add origin https://github.com/STM75001/pantan.git
-git branch -M main
-git push -u origin main
 ```
+
+GitHub repo: [github.com/STM75001/pantan](https://github.com/STM75001/pantan)
