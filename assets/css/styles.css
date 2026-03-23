@@ -628,3 +628,19 @@ body {
   color: var(--white);
 }
 .footer-social svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ── HOST INDICATOR BADGE ── */
+#host-badge {
+  position: fixed; bottom: 16px; right: 16px; z-index: 88888;
+  background: #0B1F3A; border: 1.5px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.65); font-size: .7rem; font-weight: 600;
+  padding: 5px 12px; border-radius: 6px;
+  font-family: system-ui, sans-serif; letter-spacing: .4px;
+  display: flex; align-items: center; gap: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  pointer-events: none; text-decoration: none;
+}
+#host-badge .hb-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #12B08E; flex-shrink: 0;
+}
